@@ -5,14 +5,14 @@
 
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
-	QKeyTest w;
+	QApplication *app = new QApplication(argc, argv);
+	QKeyTest *w = new QKeyTest;
 
 #ifdef SHOW_FULLSCREEN
-	w.showFullScreen();
+	w->showFullScreen();
 #else
-	w.show();
+	w->show();
 #endif
 
-	return a.exec();
+	return app->exec();
 }
